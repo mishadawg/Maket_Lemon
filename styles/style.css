@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Global styles and if you dont know where you can put it*/
+.wrapper{
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* Menu */
+.nav-bar{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+.nav-link,.dropdown-link{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+.dropdown-menu{
+    display: none;
+    list-style-type: none;
+}
