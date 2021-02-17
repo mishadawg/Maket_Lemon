@@ -17,3 +17,6 @@ function openMenu(){
     }
 }
 buttonMenu.addEventListener("click",openMenu,false);
+
+// Carusel
+let caruselBg = document.getElementsByClassName('main-carusel');

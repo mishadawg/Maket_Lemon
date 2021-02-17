@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script async src="./js/main.js"></script>
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,700;1,300;1,400&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,7 +15,13 @@
     <section class="header-menu">
         <div class="wrapper">
             <nav>
+        
                 <ul class="nav-bar">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="./images/Lemon Logo@1X.png" alt="Logo Lemon">
+                        </a> 
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             HOME
@@ -54,6 +62,9 @@
                             All Categories
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <input placeholder="FIND..." type="search" name="search" id="menu-search">
+                    </li>
                 </ul>
 
             </nav>
@@ -63,15 +74,25 @@
 
     <!-- Main-carusel -->
     <section class="main-carusel">
-        <div class="wrapper">
-            <img src="" alt="">
-            <h2 class="title-carusel">Bananas Foster Ice Cream Cake</h2>
-            <p class="description-carusel">
-                If you're looking for decadence, 
-                look no further — you've found the Holy Grail of desserts. 
-                Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.
-            </p>
-            <button class="button-carusel">Get it recipe</button>
+        <div class="wrapper flexing">
+            <div class="main-block-carusel">
+                <img src="./images/Logo@1X (1).png" alt="Logo Lemon">
+                <h2 class="title-carusel PlayfairDisplayr400">Bananas Foster Ice Cream Cake</h2>
+                <p class="description-carusel JosefinSansl300">
+                    If you're looking for decadence, 
+                    look no further — you've found the Holy Grail of desserts. 
+                    Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.
+                </p>
+                <button class="button-carusel JosefinSansl300">Get it recipe</button>
+            </div>
+            <div class="paggination-block">
+                <ul class="array-paggin">
+                    <li id="pag-1" class="paggination-self">1</li>
+                    <li id="pag-2" class="paggination-self">2</li>
+                    <li id="pag-3" class="paggination-self">3</li>
+                    <li id="pag-4" class="paggination-self">4</li>
+                </ul>
+            </div>
         </div>
     </section>
     <!-- ./ Main-carusel -->
