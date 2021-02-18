@@ -19,4 +19,16 @@ function openMenu(){
 buttonMenu.addEventListener("click",openMenu,false);
 
 // Carusel
-let caruselBg = document.getElementsByClassName('main-carusel');
+let caruselBg = document.getElementsByName('carusel');
+let arrPagination = document.getElementsByClassName('paggination-self');
+function hide(e){
+    e.target.style.visibility = 'hidden';
+}
+
+for (let l = 0; l < arrPagination.length; l++) {
+    arrPagination[l].addEventListener('click',hide,false);
+}
+
+
+
+
