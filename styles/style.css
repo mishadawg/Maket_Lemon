@@ -30,7 +30,7 @@
 }
 .PlayfairDisplayr400{
     font-family: 'Playfair Display', serif;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 /* Global styles and if you dont know where you can put your classes*/
@@ -45,6 +45,14 @@
     -webkit-box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.5);
     -moz-box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.5);
     box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.5);
+}
+.button{
+    background-color: white;
+    padding: 10px 26px;
+    border: 1px solid #C2C2C2;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 /* Menu */
@@ -125,14 +133,7 @@
     margin-bottom: 28px;
     padding-right: 310px;
 }
-.button-carusel{
-    background-color: white;
-    padding: 10px 16px;
-    border: 1px solid #C2C2C2;
-    text-transform: uppercase;
-    font-size: 12px;
-    cursor: pointer;
-}
+
 .paggination-block{
     width: 40%;
 }
@@ -145,12 +146,16 @@
     height: 100%;
 }
 .paggination-self{
-    padding: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.459);
+    padding: 6px;
     margin: 6px 6px;
-    background-color: rgba(199, 199, 199, 0.637);
+    background-color:white;
     border-radius: 50%;
     cursor: pointer;
+}
+.paggination-self:hover{
+    transform: scale(1.3);
+    background-color:rgba(255, 255, 255, 0.829);
+    transition: 0.3s;
 }
 
 /* Arr of recipses */
@@ -186,3 +191,31 @@
     color: rgb(92, 92, 92);
 }
 
+/* Selected recipse */
+.selected-recipse{
+    padding: 50px 0px;
+}
+.container-selected-recipse{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px;
+}
+.title-selected-recipse{
+    margin-bottom: 26px;
+    color: #055555;
+    font-size: 32px;
+}
+.container-info-recips{
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 16px;
+}
+.text-in-detail-selected-recipse{
+    height: 265px;
+    overflow-x: auto;
+}
+.text-in-detail-selected-recipse > h4{
+    margin: 16px 0px; 
+}
