@@ -54,7 +54,12 @@
     font-size: 12px;
     cursor: pointer;
 }
+.button:hover{
+    background-color: rgb(211, 211, 211);
+    transition: 0.3s;
+}
 
+/* Header */
 /* Menu */
 .nav-bar{
     display: flex;
@@ -62,9 +67,6 @@
     align-items: center;
     list-style-type: none;
     padding: 24px 0px;
-    -webkit-box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.5);
-    -moz-box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.5);
-    box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.5);
     position: relative;
     z-index: 15;
 }
@@ -74,8 +76,6 @@
     color: black;
     text-transform: uppercase;
     font-size: 14px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 300;
 }
 .dropdown-link{
     color: rgba(109, 109, 109, 0.87);
@@ -102,6 +102,17 @@
 }
 .dropdown-item{
     margin: 16px 0px;
+}
+
+
+/* Footer */
+.footer{
+    background-color: #2F2F2F;
+    padding: 80px 0px;
+}
+.footer-link{
+    color: white;
+    font-size: 12px;
 }
 
 /* Main carusel */
