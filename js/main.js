@@ -32,8 +32,7 @@ function slider(e){
         setTimeout(removerSlider,1000);
         caruselBg.style.background = "url(images/bg/bg-1.jpg)";
         caruselBg.style.backgroundPosition = "center";
-        caruselBg.style.backgroundSize = "100%";
-        
+        caruselBg.style.backgroundSize = "100%"; 
     }else if(idOfBtn == "pag-2"){
         caruselBg.classList.add('animate__slideInLeft')
         setTimeout(removerSlider,1000);
@@ -61,6 +60,13 @@ for (let l = 0; l < arrPagination.length; l++) {
     arrPagination[l].addEventListener('click',slider,false);
 }
 
-
-
-
+//TODO need to intergrate this cycle in to slider function to ifelse check
+//something need to change when class choosen place in classlist
+for (let k = 0; k < arrPagination.length; k++) {
+    let containsClass = arrPagination[k].classList.contains('choosen');
+    if(containsClass == true){
+        arrPagination[k].classList.remove('choosen');
+    }else{
+        arrPagination[k].classList.remove('choosen');
+    }
+}
