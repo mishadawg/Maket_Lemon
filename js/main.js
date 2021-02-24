@@ -16,7 +16,6 @@ false);
 let turnDropMenu = false;
 let dropdownMenu = document.getElementsByClassName('dropdown-menu');
 let buttonMenu = document.getElementById('dropDownMenuLink');
-
 function openMenu(){
     if(turnDropMenu == false){
         for (let i = 0; i < dropdownMenu.length; i++){
@@ -30,13 +29,11 @@ function openMenu(){
         }
     }
 }
-
 buttonMenu.addEventListener("click",openMenu,false);
 
 // Carusel
 let caruselBg = document.querySelector('.main-carusel');
 let arrPagination = document.getElementsByClassName('paggination-self');
-
 function removerSlider(){
     return caruselBg.classList.remove('animate__slideInLeft');
 }
@@ -70,18 +67,29 @@ function slider(e){
         caruselBg.style.backgroundSize = "100%";
     }
 }
-
 for (let l = 0; l < arrPagination.length; l++) {
     arrPagination[l].addEventListener('click',slider,false);
+    arrPagination[l].addEventListener('click',test,false);
 }
 
 //TODO need to intergrate this cycle in to slider function to ifelse check
 //something need to change when class choosen place in classlist
-for (let k = 0; k < arrPagination.length; k++) {
-    let containsClass = arrPagination[k].classList.contains('choosen');
-    if(containsClass == true){
-        arrPagination[k].classList.remove('choosen');
-    }else{
-        arrPagination[k].classList.remove('choosen');
-    }
+//upd suddenly,animate have slide OUT ANIMATION...This change all mining...
+console.log(arrPagination.length);
+function test(e){
+    let containsClass = e.target.classList.contains('choosen');
+        if(containsClass == true){
+            console.log('naiden');
+        }else if(containsClass == false){
+            console.log(e.target);
+        }
 }
+
+// for (let k = 0; k < arrPagination.length; k++) {
+//     //let containsClass = arrPagination[k].classList.contains('choosen');
+//     if(containsClass == true){
+//         arrPagination[k].classList.remove('choosen');
+//     }else{
+//         arrPagination[k].classList.remove('choosen');
+//     }
+// }
