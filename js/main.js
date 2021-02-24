@@ -1,3 +1,17 @@
+// Global names and functions
+let body = document.getElementById('bodyField');
+//func close the list menu
+body.addEventListener('click',
+    function(e){
+        if(e.target.id != 'dropDownMenuLink'){
+            for (let i = 0; i < dropdownMenu.length; i++){
+                dropdownMenu[i].style.display = 'none';
+                turnDropMenu = false;
+            }
+        }
+    },
+false);
+
 // Menu
 let turnDropMenu = false;
 let dropdownMenu = document.getElementsByClassName('dropdown-menu');
@@ -16,6 +30,7 @@ function openMenu(){
         }
     }
 }
+
 buttonMenu.addEventListener("click",openMenu,false);
 
 // Carusel
