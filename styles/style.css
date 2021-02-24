@@ -123,7 +123,8 @@
     background-image: url(../images/bg/bg-1.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-attachment: fixed;
+    background-size: cover;
     position: relative;
     z-index: 10;
 }
@@ -229,4 +230,13 @@
 }
 .text-in-detail-selected-recipse > h4{
     margin: 16px 0px; 
+}
+
+
+/* Media */
+@media (max-width: 375px) {
+    .arr-recipses-container{
+        flex-wrap: wrap;
+    }
+
 }
