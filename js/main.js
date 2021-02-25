@@ -11,8 +11,10 @@ body.addEventListener('click',
         }
     },
 false);
+////////////////////////////// End Global names and functions////////////////////////
 
-/////////////////////////////// Menu ////////////////////////////
+
+/////////////////////////////// Menu ////////////////////////////////////////////////
 let turnDropMenu = false;
 let dropdownMenu = document.getElementsByClassName('dropdown-menu');
 let buttonMenu = document.getElementById('dropDownMenuLink');
@@ -30,19 +32,14 @@ function openMenu(){
     }
 }
 buttonMenu.addEventListener("click",openMenu,false);
+/////////////////////////////// End Menu ///////////////////////////////////////////
 
-/////////////////////////////// Carusel //////////////////////////
+
+/////////////////////////////// Carusel ////////////////////////////////////////////
 let caruselBg = document.querySelector('.main-carusel');
 let arrPagination = document.getElementsByClassName('paggination-self');
-function styleAdds() {
-    caruselBg.style.backgroundPosition = "center";
-    caruselBg.style.backgroundAttachment= "fixed";
-    caruselBg.style.backgroundSize = "cover";
-}
-function removerSlider(){
-    return caruselBg.classList.remove('animate__slideInLeft');
-}
-function slider(e){
+//MAIN func first slider actions
+function sliderActionFirst(e){
     let idOfBtn = e.target.getAttribute("id");
     if(idOfBtn == "pag-1"){
         caruselBg.classList.add('animate__slideInLeft');
@@ -66,26 +63,51 @@ function slider(e){
         styleAdds();
     }
 }
-//Pag buttons
-for (let l = 0; l < arrPagination.length; l++) {
-    arrPagination[l].addEventListener('click',slider,false);
-    arrPagination[l].addEventListener('click',test,false);
-}
-
-//TODO need to intergrate this cycle in to slider function to ifelse check
-//something need to change when class choosen place in classlist
-//upd suddenly,animate have slide OUT ANIMATION...This change all mining...
-//24.02 need to understand what i can do with id of choosen????
-function test(e){
-    let containsClass = e.target.classList.contains('choosen');
+//MAIN func second slider actions
+function sliderActionSecond(e){
+    let prevCountCarus = searchClassChoosen();//Prev count when delete class choosen
+    let presCountCarus = 0;//Present count when add class choosen
+    let containsClass = e.target.classList.contains('choosen');//Checking for choosen class
+    if(prevCountCarus == undefined){
+        prevCountCarus = 1;
+    }//Bug with undefined on start
     delAllClassCarusel();
-    //searchClassChoosen();
     if(containsClass == true){
         delClassCarusel(e);
         searchClassChoosen();
     }else if(containsClass == false){
         addClassCarusel(e);
-        searchClassChoosen();
+        presCountCarus = searchClassChoosen();
+    }
+    changes(prevCountCarus,presCountCarus);
+}
+//MAIN Pag buttons
+for (let l = 0; l < arrPagination.length; l++) {
+    arrPagination[l].addEventListener('click',sliderActionFirst,false);
+    arrPagination[l].addEventListener('click',sliderActionSecond,false);
+}
+//func styles adds
+function styleAdds() {
+    caruselBg.style.backgroundPosition = "center";
+    caruselBg.style.backgroundAttachment= "fixed";
+    caruselBg.style.backgroundSize = "cover";
+}
+//func remover effects
+function removerSlider(){
+    caruselBg.classList.remove('animate__slideInLeft');
+    caruselBg.classList.remove('animate__slideInRight');
+    caruselBg.classList.remove('animate__slideOutLeft');
+    caruselBg.classList.remove('animate__slideOutRight');
+}
+//func check changes
+function changes(Prev,Pres) {
+    if (Pres < Prev){
+        caruselBg.classList.add('animate__slideInRight');
+        setTimeout(removerSlider,1000);
+        //console.log (`${Pres} сейчас нынешнее, и переместилось вправо относительно ${Prev}`);
+    }else if (Pres > Prev){
+        setTimeout(removerSlider,1000);
+        //console.log(`${Pres} сейчас нынешнее, и переместилось влево относительно ${Prev}`);
     }
 }
 //func add class
@@ -100,7 +122,7 @@ function delClassCarusel(e) {
         e.target.classList.remove('choosen');
     }
 }
-//func del all class
+//func del all classes
 function delAllClassCarusel() {
     for (let k = 0; k < arrPagination.length; k++) {
         arrPagination[k].classList.remove('choosen');
@@ -114,16 +136,8 @@ function searchClassChoosen() {
         if(containsClass == false){
             count++;
         }else{
-            return console.log(count);
+            return count;
         }
     }
 }
-
-// for (let k = 0; k < arrPagination.length; k++) {
-//     //let containsClass = arrPagination[k].classList.contains('choosen');
-//     if(containsClass == true){
-//         arrPagination[k].classList.remove('choosen');
-//     }else{
-//         arrPagination[k].classList.remove('choosen');
-//     }
-// }
+/////////////////////////////// End Carusel ////////////////////////////////////////
